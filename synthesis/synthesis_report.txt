@@ -1,0 +1,392 @@
+dc_shell> report_timing
+Information: Updating design information... (UID-85)
+Warning: Design 'cpu_lite_top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cpu_lite_top
+Version: S-2021.06-SP4
+Date   : Mon Oct 12 13:22:03 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p75v25c   Library: saed32lvt_ss0p75v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: u_cpu/u_instr_decoder/instr_reg_reg[30]
+              (rising edge-triggered flip-flop clocked by clk1)
+  Endpoint: u_cpu/u_reg_file/mem_reg[10][31]
+            (rising edge-triggered flip-flop clocked by clk1)
+  Path Group: clk1
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu_lite_top       280000                saed32lvt_ss0p75v25c
+  cpu_core_top       35000                 saed32lvt_ss0p75v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk1 (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_cpu/u_instr_decoder/instr_reg_reg[30]/CLK (DFFARX1_LVT)
+[7m--More--[0m[A
+
+[K                                                          0.00 #     0.00 r
+  u_cpu/u_instr_decoder/instr_reg_reg[30]/Q (DFFARX1_LVT)
+                                                          0.22       0.22 r
+  u_cpu/U297/Y (OR2X1_LVT)                                0.12       0.35 r
+  u_cpu/U155/Y (OR4X1_LVT)                                0.18       0.53 r
+  u_cpu/U938/Y (INVX1_LVT)                                0.02       0.55 f
+  u_cpu/U242/Y (AND2X1_LVT)                               0.09       0.64 f
+  u_cpu/U485/Y (INVX0_LVT)                                0.06       0.71 r
+  u_cpu/U484/Y (NOR2X0_LVT)                               0.09       0.79 f
+  u_cpu/U218/Y (OR2X1_LVT)                                0.08       0.88 f
+  u_cpu/U214/Y (INVX1_LVT)                                0.04       0.92 r
+  u_cpu/U35/Y (OR2X1_LVT)                                 0.08       1.00 r
+  u_cpu/U626/Y (NOR2X2_LVT)                               0.15       1.15 f
+  u_cpu/U1335/Y (AO22X1_LVT)                              0.14       1.28 f
+  u_cpu/U515/Y (OR4X1_LVT)                                0.20       1.49 f
+  u_cpu/U61/Y (OR4X2_LVT)                                 0.18       1.66 f
+  u_cpu/U1338/Y (AND2X1_LVT)                              0.08       1.74 f
+  u_cpu/U622/Y (NOR3X2_LVT)                               0.18       1.92 r
+  u_cpu/U661/Y (INVX2_LVT)                                0.02       1.95 f
+  u_cpu/U62/Y (INVX2_LVT)                                 0.04       1.99 r
+  u_cpu/U64/Y (INVX2_LVT)                                 0.04       2.03 f
+  u_cpu/U193/Y (NOR2X0_LVT)                               0.11       2.14 r
+  u_cpu/U2074/Y (NOR2X0_LVT)                              0.09       2.23 f
+  u_cpu/U2076/Y (AOI21X1_LVT)                             0.14       2.37 r
+  u_cpu/U184/Y (OAI21X1_LVT)                              0.13       2.50 f
+  u_cpu/U3368/Y (AO21X1_LVT)                              0.11       2.61 f
+  u_cpu/U5457/CO (FADDX1_LVT)                             0.12       2.73 f
+  u_cpu/U3611/CO (FADDX1_LVT)                             0.13       2.86 f
+  u_cpu/U3592/CO (FADDX1_LVT)                             0.12       2.98 f
+  u_cpu/U3739/CO (FADDX1_LVT)                             0.12       3.10 f
+  u_cpu/U4089/CO (FADDX1_LVT)                             0.12       3.23 f
+  u_cpu/U4132/CO (FADDX1_LVT)                             0.12       3.35 f
+  u_cpu/U4296/CO (FADDX1_LVT)                             0.12       3.48 f
+  u_cpu/U4000/CO (FADDX1_LVT)                             0.12       3.60 f
+[7m--More--[0m[A
+
+[K  u_cpu/U4223/CO (FADDX1_LVT)                             0.12       3.73 f
+  u_cpu/U4359/CO (FADDX1_LVT)                             0.12       3.85 f
+  u_cpu/U5381/CO (FADDX1_LVT)                             0.12       3.97 f
+  u_cpu/U4468/CO (FADDX1_LVT)                             0.12       4.10 f
+  u_cpu/U4625/CO (FADDX1_LVT)                             0.12       4.22 f
+  u_cpu/U5255/CO (FADDX1_LVT)                             0.12       4.34 f
+  u_cpu/U5612/CO (FADDX1_LVT)                             0.13       4.47 f
+  u_cpu/U4045/S (FADDX1_LVT)                              0.21       4.69 r
+  u_cpu/U4740/Y (AOI22X1_LVT)                             0.12       4.81 f
+  u_cpu/U4943/Y (NAND2X0_LVT)                             0.05       4.86 r
+  u_cpu/U488/Y (AOI21X1_LVT)                              0.09       4.95 f
+  u_cpu/U644/Y (AND3X1_LVT)                               0.08       5.02 f
+  u_cpu/U4946/Y (NAND2X0_LVT)                             0.07       5.09 r
+  u_cpu/U877/Y (OR2X1_LVT)                                0.07       5.16 r
+  u_cpu/U301/Y (NOR3X0_LVT)                               0.09       5.25 f
+  u_cpu/U298/Y (NAND4X0_LVT)                              0.07       5.32 r
+  u_cpu/U69/Y (INVX0_LVT)                                 0.04       5.36 f
+  u_cpu/U5569/Y (AND2X1_LVT)                              0.08       5.44 f
+  u_cpu/U5570/Y (OR2X2_LVT)                               0.12       5.55 f
+  u_cpu/U611/Y (NOR2X0_LVT)                               0.11       5.67 r
+  u_cpu/U5571/Y (OR2X1_LVT)                               0.06       5.72 r
+  u_cpu/u_reg_file/mem_reg[10][31]/D (DFFARX1_LVT)        0.00       5.72 r
+  data arrival time                                                  5.72
+
+  clock clk1 (rise edge)                                  6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  clock uncertainty                                      -0.20       5.80
+  u_cpu/u_reg_file/mem_reg[10][31]/CLK (DFFARX1_LVT)      0.00       5.80 r
+  library setup time                                     -0.07       5.73
+  data required time                                                 5.73
+  --------------------------------------------------------------------------
+  data required time                                                 5.73
+  data arrival time                                                 -5.72
+  --------------------------------------------------------------------------
+[7m--More--[0m[A
+
+[K  slack (MET)                                                        0.00
+
+
+  Startpoint: dm_rdata[1]
+              (input port clocked by clk2)
+  Endpoint: u_cdc/u_res_fifo/mem_reg[0][1]
+            (rising edge-triggered flip-flop clocked by clk2)
+  Path Group: clk2
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu_lite_top       280000                saed32lvt_ss0p75v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk2 (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    5.00       5.00 f
+  dm_rdata[1] (in)                                        0.00       5.00 f
+  U1567/Y (AND2X1_LVT)                                    0.07       5.07 f
+  U1805/Y (AO22X1_LVT)                                    0.12       5.19 f
+  u_cdc/u_res_fifo/mem_reg[0][1]/D (DFFX1_LVT)            0.00       5.19 f
+  data arrival time                                                  5.19
+
+  clock clk2 (rise edge)                                 14.00      14.00
+  clock network delay (ideal)                             0.00      14.00
+  clock uncertainty                                      -0.20      13.80
+  u_cdc/u_res_fifo/mem_reg[0][1]/CLK (DFFX1_LVT)          0.00      13.80 r
+  library setup time                                     -0.11      13.69
+  data required time                                                13.69
+  --------------------------------------------------------------------------
+  data required time                                                13.69
+  data arrival time                                                 -5.19
+[7m--More--[0m[A
+
+[K  --------------------------------------------------------------------------
+  slack (MET)                                                        8.50
+
+
+1
+dc_shell>  report_timing[11Gsource script/run.tcl[11Greport_timing[K -delay_type min
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : cpu_lite_top
+Version: S-2021.06-SP4
+Date   : Mon Oct 12 13:22:18 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p75v25c   Library: saed32lvt_ss0p75v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: u_cdc/u_cmd_fifo/rptr_gray_sync1_reg[0]
+              (rising edge-triggered flip-flop clocked by clk1)
+  Endpoint: u_cdc/u_cmd_fifo/rptr_gray_sync2_reg[0]
+            (rising edge-triggered flip-flop clocked by clk1)
+  Path Group: clk1
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu_lite_top       280000                saed32lvt_ss0p75v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk1 (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_cdc/u_cmd_fifo/rptr_gray_sync1_reg[0]/CLK (DFFARX1_LVT)
+                                                          0.00 #     0.00 r
+[7m--More--[0m[A
+
+[K  u_cdc/u_cmd_fifo/rptr_gray_sync1_reg[0]/Q (DFFARX1_LVT)
+                                                          0.19       0.19 f
+  u_cdc/u_cmd_fifo/rptr_gray_sync2_reg[0]/D (DFFARX1_LVT)
+                                                          0.00       0.19 f
+  data arrival time                                                  0.19
+
+  clock clk1 (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.05       0.05
+  u_cdc/u_cmd_fifo/rptr_gray_sync2_reg[0]/CLK (DFFARX1_LVT)
+                                                          0.00       0.05 r
+  library hold time                                      -0.03       0.02
+  data required time                                                 0.02
+  --------------------------------------------------------------------------
+  data required time                                                 0.02
+  data arrival time                                                 -0.19
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.17
+
+
+  Startpoint: u_cdc/u_cmd_fifo/wptr_gray_sync1_reg[0]
+              (rising edge-triggered flip-flop clocked by clk2)
+  Endpoint: u_cdc/u_cmd_fifo/wptr_gray_sync2_reg[0]
+            (rising edge-triggered flip-flop clocked by clk2)
+  Path Group: clk2
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu_lite_top       280000                saed32lvt_ss0p75v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk2 (rise edge)                                  0.00       0.00
+[7m--More--[0m[A
+
+[K  clock network delay (ideal)                             0.00       0.00
+  u_cdc/u_cmd_fifo/wptr_gray_sync1_reg[0]/CLK (DFFARX1_LVT)
+                                                          0.00       0.00 r
+  u_cdc/u_cmd_fifo/wptr_gray_sync1_reg[0]/Q (DFFARX1_LVT)
+                                                          0.19       0.19 f
+  u_cdc/u_cmd_fifo/wptr_gray_sync2_reg[0]/D (DFFARX1_LVT)
+                                                          0.00       0.19 f
+  data arrival time                                                  0.19
+
+  clock clk2 (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.05       0.05
+  u_cdc/u_cmd_fifo/wptr_gray_sync2_reg[0]/CLK (DFFARX1_LVT)
+                                                          0.00       0.05 r
+  library hold time                                      -0.03       0.02
+  data required time                                                 0.02
+  --------------------------------------------------------------------------
+  data required time                                                 0.02
+  data arrival time                                                 -0.19
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.17
+
+
+1
+dc_shell> report _qor[K[K[Karea -hier
+ 
+****************************************
+Report : area
+Design : cpu_lite_top
+Version: S-2021.06-SP4
+Date   : Mon Oct 12 13:22:43 2026
+****************************************
+
+Library(s) Used:
+
+    saed32lvt_ss0p75v25c (File: /fetools/work_area/frontend/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v25c.db)
+
+Number of ports:                          337
+Number of nets:                         38097
+Number of cells:                        36888
+Number of combinational cells:          25527
+Number of sequential cells:             11359
+Number of macros/black boxes:               0
+Number of buf/inv:                       1719
+Number of references:                      31
+
+Combinational area:              64639.493410
+Buf/Inv area:                     2794.313310
+Noncombinational area:           75565.146179
+Macro/Black Box area:                0.000000
+Net Interconnect area:          107412.746687
+
+Total cell area:                140204.639589
+Total area:                     247617.386276
+
+Hierarchical area distribution
+------------------------------
+
+[7m--More--[0m[A
+
+[K                                  Global cell area             Local cell area
+                                  --------------------  ------------------------------ 
+Hierarchical cell                 Absolute     Percent  Combi-      Noncombi-   Black-
+                                  Total        Total    national    national    boxes   Design
+--------------------------------  -----------  -------  ----------  ----------  ------  --------------
+cpu_lite_top                      140204.6396    100.0   3553.1873   5229.2671  0.0000  cpu_lite_top
+u_cache/u_cache_datapath          111640.8869     79.6  45539.0469  66101.8400  0.0000  cache_datapath
+u_cpu                              19781.2983     14.1  15547.2592   4234.0391  0.0000  cpu_core_top
+--------------------------------  -----------  -------  ----------  ----------  ------  --------------
+Total                                                   64639.4934  75565.1462  0.0000
+
+1
+dc_shell> report_qor
+ 
+****************************************
+Report : qor
+Design : cpu_lite_top
+Version: S-2021.06-SP4
+Date   : Mon Oct 12 13:22:52 2026
+****************************************
+
+
+  Timing Path Group 'clk1'
+  -----------------------------------
+  Levels of Logic:              52.00
+  Critical Path Length:          5.72
+  Critical Path Slack:           0.00
+  Critical Path Clk Period:      6.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'clk2'
+  -----------------------------------
+  Levels of Logic:               2.00
+  Critical Path Length:          0.19
+  Critical Path Slack:           8.50
+  Critical Path Clk Period:     14.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          2
+  Hierarchical Port Count:        209
+  Leaf Cell Count:              36886
+  Buf/Inv Cell Count:            1719
+  Buf Cell Count:                 261
+  Inv Cell Count:                1458
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     25527
+  Sequential Cell Count:        11359
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    64639.493410
+  Noncombinational Area: 75565.146179
+  Buf/Inv Area:           2794.313310
+  Total Buffer Area:           655.69
+  Total Inverter Area:        2138.62
+  Macro/Black Box Area:      0.000000
+  Net Area:             107412.746687
+  -----------------------------------
+  Cell Area:            140204.639589
+  Design Area:          247617.386276
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         37888
+  Nets With Violations:            11
+  Max Trans Violations:             0
+  Max Cap Violations:              11
+  -----------------------------------
+
+
+  Hostname: feserver.mirafra.com
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                   15.93
+  Logic Optimization:                 47.05
+  Mapping Optimization:              108.04
+  -----------------------------------------
+  Overall Compile Time:              429.26
+  Overall Compile Wall Clock Time:   441.01
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

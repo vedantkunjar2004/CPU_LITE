@@ -1,0 +1,51 @@
+
+# constraint.sdc 
+
+# clk1: CPU Core Clock 
+create_clock -name clk1 -period 6.00 [get_ports cpu_clk]
+
+# clk2: Data Memory Clock 
+create_clock -name clk2 -period 14.00 [get_ports dm_clk]
+
+
+# Clock Domain Isolation (Asynchronous Clocks)
+set_clock_groups -asynchronous \
+  -group [get_clocks clk1] \
+  -group [get_clocks clk2]
+
+
+# Clock Uncertainty 
+set_clock_uncertainty -setup 0.20 [get_clocks {clk1 clk2}]
+set_clock_uncertainty -hold  0.05 [get_clocks {clk1 clk2}]
+
+
+# CPU Core Domain (clk1) I/O
+set clk1_inputs  [get_ports {cpu_rst_n instr_data[*]}]
+set clk1_outputs [get_ports {instr_addr[*]}]
+
+# Data Memory Domain (clk2) I/O
+set clk2_inputs  [get_ports {dm_rst_n dm_rdata[*]}]
+set clk2_outputs [get_ports {dm_en dm_we dm_addr[*] dm_wdata[*]}]
+
+
+# Input Delay Constraints 
+
+# clk1 Domain 
+set_input_delay -clock clk1 -max 2.40 $clk1_inputs
+set_input_delay -clock clk1 -min 0.80 $clk1_inputs
+
+# clk2 Domain 
+set_input_delay -clock clk2 -max 5.00 $clk2_inputs
+set_input_delay -clock clk2 -min 1.50 $clk2_inputs
+
+
+# Output Delay Constraints 
+
+# clk1 Domain 
+set_output_delay -clock clk1 -max 2.00 $clk1_outputs
+set_output_delay -clock clk1 -min 0.50 $clk1_outputs
+
+# clk2 Domain 
+set_output_delay -clock clk2 -max 4.50 $clk2_outputs
+set_output_delay -clock clk2 -min 1.00 $clk2_outputs
+
