@@ -1,5 +1,5 @@
 
-# constraint.sdc 
+# constraint.sdc
 
 # clk1: CPU Core Clock 
 create_clock -name clk1 -period 6.00 [get_ports cpu_clk]
