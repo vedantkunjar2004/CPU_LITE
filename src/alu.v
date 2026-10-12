@@ -1,7 +1,7 @@
 `include "cpu_core_header.vh"
 `default_nettype none
 module alu(
-    input wire [31:0] a, // operand a
+    input wire [31:0] a, //operand a
     input wire [31:0] b, //operand b
     input wire [3:0] alu_op, // operation - not the direct 8 bit opcode value. 
     // The opcode is decoded by the controller
