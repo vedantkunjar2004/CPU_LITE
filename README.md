@@ -7,7 +7,7 @@ A fully synthesisable **32-bit RISC multi-cycle processor** featuring a **Direct
 
 ## Micro-Architecture
 
-
+[CPU_Lite_Microarchitecture](https://drive.google.com/file/d/135d3I4OGk92K4m5FwHLEFgf2RNaXZqJa/view?usp=sharing)
 
 The processor is organised into **four major subsystems** operating across two asynchronous clock domains:
 
