@@ -1,0 +1,264 @@
+Information: License queuing is enabled. (PT-018)
+Error: Library Compiler executable path is not set. (PT-063)
+
+                                 PrimeTime (R)
+
+               Version S-2021.06-SP2 for linux64 - Aug 24, 2021 
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+pt_shell> soure [K[Krce setup.tcl 
+* saed32lvt_ss0p75v25c.db 
+* saed32lvt_ss0p75v25c.db 
+pt_shell> source run
+run.log run.tcl 
+pt_shell> source run..[Ktcl 
+Information: current_design won't return any data before link (DES-071)
+Loading verilog file '/fetools/work_area/frontend/b11_rtl/vedant/CPU_LITE_PROJECT/STA/script/cpu_lite_netlist.v'
+Loading db file '/fetools/work_area/frontend/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v25c.db'
+Information: Renamed scalar net 'cache_addr[13]' to 'cache_addr[13]1' in design 'cpu_core_top'. (DBR-020)
+Information: Renamed scalar net 'cache_addr[12]' to 'cache_addr[12]1' in design 'cpu_core_top'. (DBR-020)
+Information: Renamed scalar net 'cache_addr[11]' to 'cache_addr[11]1' in design 'cpu_core_top'. (DBR-020)
+Information: Renamed scalar net 'cache_addr[10]' to 'cache_addr[10]1' in design 'cpu_core_top'. (DBR-020)
+Information: Renamed scalar net 'cache_addr[9]' to 'cache_addr[9]1' in design 'cpu_core_top'. (DBR-020)
+Information: Renamed scalar net 'cache_addr[8]' to 'cache_addr[8]1' in design 'cpu_core_top'. (DBR-020)
+Information: Renamed scalar net 'cache_addr[5]' to 'cache_addr[5]1' in design 'cpu_core_top'. (DBR-020)
+Linking design cpu_lite_top...
+Information: Removing 2 unneeded designs..... (LNK-034)
+Information: 235 (79.93%) library cells are unused in library saed32lvt_ss0p75v25c..... (LNK-045)
+Information: total 235 library cells are unused (LNK-046)
+Design 'cpu_lite_top' was successfully linked.
+Information: There are 37017 leaf cells, ports, hiers and 38110 nets in the design (LNK-047)
+****************************************
+Report : clock
+Design : cpu_lite_top
+Version: S-2021.06-SP2
+Date   : Mon Oct 12 13:53:02 2026
+****************************************
+
+Attributes:
+    p - Propagated clock
+    G - Generated  clock
+    I - Inactive   clock
+
+Clock             Period          Waveform            Attrs     Sources
+-----------------------------------------------------------------------
+clk1                6.00          {0 3}                         {cpu_clk}
+clk2               14.00          {0 7}                         {dm_clk}
+
+Information: Using automatic max wire load selection group 'predcaps'. (ENV-003)
+Information: Using automatic min wire load selection group 'predcaps'. (ENV-003)
+Information: Building multi voltage information for entire design. (MV-022)
+****************************************
+Report : analysis_coverage
+Design : cpu_lite_top
+Version: S-2021.06-SP2
+Date   : Mon Oct 12 13:53:05 2026
+****************************************
+
+Type of Check         Total              Met         Violated         Untested
+--------------------------------------------------------------------------------
+setup                 11359     11343 (100%)         0 (  0%)        16 (  0%)
+hold                  11359     11343 (100%)         0 (  0%)        16 (  0%)
+recovery                999       999 (100%)         0 (  0%)         0 (  0%)
+removal                 999       999 (100%)         0 (  0%)         0 (  0%)
+min_pulse_width       23717     22718 ( 96%)         0 (  0%)       999 (  4%)
+out_setup                60        60 (100%)         0 (  0%)         0 (  0%)
+out_hold                 60        60 (100%)         0 (  0%)         0 (  0%)
+--------------------------------------------------------------------------------
+All Checks            48553     47522 ( 98%)         0 (  0%)      1031 (  2%)
+
+****************************************
+Report : global_timing
+	-format { narrow }
+Design : cpu_lite_top
+Version: S-2021.06-SP2
+Date   : Mon Oct 12 13:53:05 2026
+****************************************
+
+No setup violations found.
+
+No hold violations found.
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : cpu_lite_top
+Version: S-2021.06-SP2
+Date   : Mon Oct 12 13:53:05 2026
+****************************************
+
+
+  Startpoint: u_cpu/u_instr_decoder/instr_reg_reg[30]
+               (rising edge-triggered flip-flop clocked by clk1)
+  Endpoint: u_cpu/u_reg_file/mem_reg[10][31]
+               (rising edge-triggered flip-flop clocked by clk1)
+  Path Group: clk1
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk1 (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_cpu/u_instr_decoder/instr_reg_reg[30]/CLK (DFFARX1_LVT)
+                                                          0.00       0.00 r
+  u_cpu/u_instr_decoder/instr_reg_reg[30]/Q (DFFARX1_LVT)
+                                                          0.22       0.22 r
+  u_cpu/U297/Y (OR2X1_LVT)                                0.12       0.35 r
+  u_cpu/U155/Y (OR4X1_LVT)                                0.18       0.53 r
+  u_cpu/U938/Y (INVX1_LVT)                                0.02       0.55 f
+  u_cpu/U242/Y (AND2X1_LVT)                               0.09       0.64 f
+  u_cpu/U485/Y (INVX0_LVT)                                0.06       0.71 r
+  u_cpu/U484/Y (NOR2X0_LVT)                               0.09       0.79 f
+  u_cpu/U218/Y (OR2X1_LVT)                                0.08       0.88 f
+  u_cpu/U214/Y (INVX1_LVT)                                0.04       0.92 r
+  u_cpu/U35/Y (OR2X1_LVT)                                 0.08       1.00 r
+  u_cpu/U626/Y (NOR2X2_LVT)                               0.15       1.15 f
+  u_cpu/U1335/Y (AO22X1_LVT)                              0.14       1.28 f
+  u_cpu/U515/Y (OR4X1_LVT)                                0.20       1.49 f
+  u_cpu/U61/Y (OR4X2_LVT)                                 0.18       1.66 f
+  u_cpu/U1338/Y (AND2X1_LVT)                              0.08       1.74 f
+  u_cpu/U622/Y (NOR3X2_LVT)                               0.18       1.92 r
+  u_cpu/U661/Y (INVX2_LVT)                                0.02       1.95 f
+  u_cpu/U62/Y (INVX2_LVT)                                 0.04       1.99 r
+  u_cpu/U64/Y (INVX2_LVT)                                 0.04       2.03 f
+  u_cpu/U193/Y (NOR2X0_LVT)                               0.11       2.14 r
+  u_cpu/U2074/Y (NOR2X0_LVT)                              0.09       2.23 f
+  u_cpu/U2076/Y (AOI21X1_LVT)                             0.14       2.37 r
+  u_cpu/U184/Y (OAI21X1_LVT)                              0.13       2.50 f
+  u_cpu/U3368/Y (AO21X1_LVT)                              0.11       2.61 f
+  u_cpu/U5457/CO (FADDX1_LVT)                             0.12       2.73 f
+  u_cpu/U3611/CO (FADDX1_LVT)                             0.13       2.86 f
+  u_cpu/U3592/CO (FADDX1_LVT)                             0.12       2.98 f
+  u_cpu/U3739/CO (FADDX1_LVT)                             0.12       3.10 f
+  u_cpu/U4089/CO (FADDX1_LVT)                             0.12       3.23 f
+  u_cpu/U4132/CO (FADDX1_LVT)                             0.12       3.35 f
+  u_cpu/U4296/CO (FADDX1_LVT)                             0.12       3.48 f
+  u_cpu/U4000/CO (FADDX1_LVT)                             0.12       3.60 f
+  u_cpu/U4223/CO (FADDX1_LVT)                             0.12       3.73 f
+  u_cpu/U4359/CO (FADDX1_LVT)                             0.12       3.85 f
+  u_cpu/U5381/CO (FADDX1_LVT)                             0.12       3.97 f
+  u_cpu/U4468/CO (FADDX1_LVT)                             0.12       4.10 f
+  u_cpu/U4625/CO (FADDX1_LVT)                             0.12       4.22 f
+  u_cpu/U5255/CO (FADDX1_LVT)                             0.12       4.34 f
+  u_cpu/U5612/CO (FADDX1_LVT)                             0.13       4.47 f
+  u_cpu/U4045/S (FADDX1_LVT)                              0.21       4.69 r
+  u_cpu/U4740/Y (AOI22X1_LVT)                             0.12       4.81 f
+  u_cpu/U4943/Y (NAND2X0_LVT)                             0.05       4.86 r
+  u_cpu/U488/Y (AOI21X1_LVT)                              0.09       4.95 f
+  u_cpu/U644/Y (AND3X1_LVT)                               0.08       5.02 f
+  u_cpu/U4946/Y (NAND2X0_LVT)                             0.07       5.09 r
+  u_cpu/U877/Y (OR2X1_LVT)                                0.07       5.16 r
+  u_cpu/U301/Y (NOR3X0_LVT)                               0.09       5.25 f
+  u_cpu/U298/Y (NAND4X0_LVT)                              0.07       5.32 r
+  u_cpu/U69/Y (INVX0_LVT)                                 0.04       5.36 f
+  u_cpu/U5569/Y (AND2X1_LVT)                              0.08       5.44 f
+  u_cpu/U5570/Y (OR2X2_LVT)                               0.12       5.55 f
+  u_cpu/U611/Y (NOR2X0_LVT)                               0.11       5.67 r
+  u_cpu/U5571/Y (OR2X1_LVT)                               0.06       5.72 r
+  u_cpu/u_reg_file/mem_reg[10][31]/D (DFFARX1_LVT)        0.00       5.72 r
+  data arrival time                                                  5.72
+
+  clock clk1 (rise edge)                                  6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  clock reconvergence pessimism                           0.00       6.00
+  clock uncertainty                                      -0.20       5.80
+  u_cpu/u_reg_file/mem_reg[10][31]/CLK (DFFARX1_LVT)                 5.80 r
+  library setup time                                     -0.07       5.73
+  data required time                                                 5.73
+  ------------------------------------------------------------------------------
+  data required time                                                 5.73
+  data arrival time                                                 -5.72
+  ------------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+****************************************
+Report : timing
+	-path_type full
+	-delay_type min
+	-max_paths 1
+	-sort_by slack
+Design : cpu_lite_top
+Version: S-2021.06-SP2
+Date   : Mon Oct 12 13:53:05 2026
+****************************************
+
+
+  Startpoint: u_cdc/u_cmd_fifo/wptr_gray_sync1_reg[0]
+               (rising edge-triggered flip-flop clocked by clk2)
+  Endpoint: u_cdc/u_cmd_fifo/wptr_gray_sync2_reg[0]
+               (rising edge-triggered flip-flop clocked by clk2)
+  Path Group: clk2
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk2 (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_cdc/u_cmd_fifo/wptr_gray_sync1_reg[0]/CLK (DFFARX1_LVT)
+                                                          0.00       0.00 r
+  u_cdc/u_cmd_fifo/wptr_gray_sync1_reg[0]/Q (DFFARX1_LVT)
+                                                          0.19       0.19 f
+  u_cdc/u_cmd_fifo/wptr_gray_sync2_reg[0]/D (DFFARX1_LVT)
+                                                          0.00       0.19 f
+  data arrival time                                                  0.19
+
+  clock clk2 (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.05       0.05
+  u_cdc/u_cmd_fifo/wptr_gray_sync2_reg[0]/CLK (DFFARX1_LVT)          0.05 r
+  library hold time                                      -0.03       0.02
+  data required time                                                 0.02
+  ------------------------------------------------------------------------------
+  data required time                                                 0.02
+  data arrival time                                                 -0.19
+  ------------------------------------------------------------------------------
+  slack (MET)                                                        0.17
+
+
+1
+Information: Defining new variable 'clk1_inputs'. (CMD-041)
+Information: Defining new variable 'clk2_outputs'. (CMD-041)
+Information: Defining new variable 'clk2_inputs'. (CMD-041)
+Information: Defining new variable 'clk1_outputs'. (CMD-041)
+1
+pt_shell> report_global_timing
+****************************************
+Report : global_timing
+	-format { narrow }
+Design : cpu_lite_top
+Version: S-2021.06-SP2
+Date   : Mon Oct 12 13:53:48 2026
+****************************************
+
+No setup violations found.
+
+No hold violations found.
+1
+pt_shell> exit
+
+Timing updates: 1 (1 implicit, 0 explicit) (0 incremental, 1 full, 0 logical)
+Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
+Maximum memory usage for this session: 2987.45 MB
+CPU usage for this session: 16 seconds 
+Elapsed time for this session: 85 seconds
+Diagnostics summary: 1 error, 13 informationals
+
+Thank you for using pt_shell!
